@@ -17,14 +17,21 @@ class Main {
             System.out.println(available[playerChoice - 1] + " vs " + available[computerChoice - 1]);
             if (playerChoice == computerChoice) {
                 System.out.println("It´s a draw!");
+                System.out.println("Current score: " + pv + " vs " + cv);
             } else if (playerChoice == computerChoice - 2 || playerChoice == computerChoice + 1) {
                 System.out.println("Player wins the round!");
                 pv++;
+                System.out.println("Current score: " + pv + " vs " + cv);
             } else if (playerChoice == computerChoice - 1 || playerChoice == computerChoice + 2) {
                 System.out.println("Computer wins the round!");
                 cv++;
+                System.out.println("Current score: " + pv + " vs " + cv);
             }
         }
-
+        if (pv == 3) {
+            System.out.println("Player wins the game! Congratulations!");
+        } else {
+            System.out.println("Computer wins the game! Better luck next time!");
+        }
     }
 }
