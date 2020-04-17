@@ -1,8 +1,15 @@
 
 package fi.company;
+import java.util.*;
 
-public class Main {
+class Main {
     public static void main(String [] args) {
-        System.out.println("hei maailma");
+        Scanner s = new Scanner(System.in);
+        System.out.println("1) rock, 2) paper, 3) scissors?");
+        int choice = Integer.parseInt(s.nextLine());
+        int computerChoice = .... // random stuff
+        if(choice == 1 && computerChoice == 2) {
+            System.out.println("computer won");
+        } ...
     }
 }
