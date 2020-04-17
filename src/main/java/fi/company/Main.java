@@ -12,9 +12,19 @@ class Main {
         String[] available = {"rock", "paper", "scissors"};
         while (pv < 3 && cv < 3) {
             System.out.println("1) rock, 2) paper, 3) scissors?");
+            try {
             playerChoice = Integer.parseInt(s.nextLine());
             computerChoice = (int) (Math.random() * 3 + 1);
-            System.out.println(available[playerChoice - 1] + " vs " + available[computerChoice - 1]);
+                System.out.println(available[playerChoice - 1] + " vs " + available[computerChoice - 1]);
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Choose between 1-3!");
+                continue;
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Numbers only! Choose between 1-3;");
+                continue;
+            }
             if (playerChoice == computerChoice) {
                 System.out.println("It´s a draw!");
                 System.out.println("Current score: " + pv + " vs " + cv);
